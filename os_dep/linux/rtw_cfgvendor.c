@@ -1173,7 +1173,8 @@ static const struct wiphy_vendor_command rtw_vendor_cmds [] = {
 			.subcmd = BRCM_VENDOR_SCMD_PRIV_STR
 		},
 		.flags = WIPHY_VENDOR_CMD_NEED_WDEV | WIPHY_VENDOR_CMD_NEED_NETDEV,
-		.doit = wl_cfgvendor_priv_string_handler
+		.doit = wl_cfgvendor_priv_string_handler,
+		.policy = VENDOR_CMD_RAW_DATA
 	},
 #if defined(GSCAN_SUPPORT) && 0
 	{
@@ -1281,7 +1282,8 @@ static const struct wiphy_vendor_command rtw_vendor_cmds [] = {
 			.subcmd = ANDR_WIFI_SUBCMD_GET_FEATURE_SET
 		},
 		.flags = WIPHY_VENDOR_CMD_NEED_WDEV | WIPHY_VENDOR_CMD_NEED_NETDEV,
-		.doit = rtw_cfgvendor_get_feature_set
+		.doit = rtw_cfgvendor_get_feature_set,
+		.policy = VENDOR_CMD_RAW_DATA
 	},
 	{
 		{
@@ -1289,7 +1291,8 @@ static const struct wiphy_vendor_command rtw_vendor_cmds [] = {
 			.subcmd = ANDR_WIFI_SUBCMD_GET_FEATURE_SET_MATRIX
 		},
 		.flags = WIPHY_VENDOR_CMD_NEED_WDEV | WIPHY_VENDOR_CMD_NEED_NETDEV,
-		.doit = rtw_cfgvendor_get_feature_set_matrix
+		.doit = rtw_cfgvendor_get_feature_set_matrix,
+		.policy = VENDOR_CMD_RAW_DATA
 	}
 };
 
